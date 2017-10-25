@@ -1,8 +1,10 @@
 public class TimeType {
         private int hour,minute,second;
 
+
     public TimeType(){
-        }
+        this(0,0,0);
+    }
 
     public TimeType(int hour, int minute, int second){
         this.hour = hour;
@@ -10,14 +12,27 @@ public class TimeType {
         this.second = second;
     }
 
-    public TimeType(String something) {
+    public TimeType(TimeType time) {
+        this(time.getHour(),time.getMinute(),time.getSecond());
     }
 
-    public boolean Set(int h, int m, int s){
-        if(0<=h & h<=23 & 0<=m & m<=59 & 0<=s & s<=59){
-            hour = h;
-            minute = m;
-            second = s;
+    public int getHour(){
+        return hour;
+    }
+
+    public int getMinute(){
+        return minute;
+    }
+
+    public int getSecond(){
+        return second;
+    }
+
+    public boolean Set(int hour, int minute, int second){
+        if(0<=hour & hour<=23 & 0<=minute & minute<=59 & 0<=second & second<=59){
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
             return true;
         }
         else return false;
@@ -54,19 +69,6 @@ public class TimeType {
     }
 
     public String toString(){
-        String string;
-        if(hour<10){
-            string = "0"+hour+":";
-        }
-        else string = hour+":";
-        if(minute<10){
-            string = string+"0"+minute+":";
-        }
-        else string = string +minute+":";
-        if(second<10){
-            string = string+"0"+second;
-        }
-        else string = string+second;
-        return string;
+        return String.format("%02d:%02d:%02d %s",(getHour()==0 || getHour()==12 ? 12: getHour()%12),getMinute(),getSecond(),((getHour()/12==0) ? "AM":"PM"));
     }
 }
