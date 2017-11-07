@@ -2,30 +2,17 @@ public class TimeType {
         private int hour,minute,second;
 
 
-    public TimeType(){
-        this(0,0,0);
+    public TimeType() {
+
+        this(0, 0, 0);
     }
 
     public TimeType(int hour, int minute, int second){
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+        this.Set(hour,minute,second);
     }
 
     public TimeType(TimeType time) {
-        this(time.getHour(),time.getMinute(),time.getSecond());
-    }
-
-    public int getHour(){
-        return hour;
-    }
-
-    public int getMinute(){
-        return minute;
-    }
-
-    public int getSecond(){
-        return second;
+        this(time.hour, time.minute, time.second);
     }
 
     public boolean Set(int hour, int minute, int second){
@@ -35,7 +22,12 @@ public class TimeType {
             this.second = second;
             return true;
         }
-        else return false;
+        else {
+            this.hour = 0;
+            this.minute = 0;
+            this.second = 0;
+            return false;
+        }
     }
 
     public void Increase(){
@@ -69,6 +61,6 @@ public class TimeType {
     }
 
     public String toString(){
-        return String.format("%02d:%02d:%02d %s",(getHour()==0 || getHour()==12 ? 12: getHour()%12),getMinute(),getSecond(),((getHour()/12==0) ? "AM":"PM"));
+        return String.format("%02d:%02d:%02d %s",(this.hour==0 || this.hour==12 ? 12: this.hour%12),this.minute,this.second,((this.hour/12==0) ? "AM":"PM"));
     }
 }
