@@ -2,15 +2,21 @@ public class TimeAndDate extends TimeType{
     private int month,day,year;
     private int[] date = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    private void leapyear(int years){
+    private boolean leapyear(int years){
         if (years % 4 == 0) {
             date[1] = 29;
             if (years % 100 == 0) {
                 date[1] = 28;
                 if (years % 400 == 0) {
                     date[1] = 29;
+                    return true;
                 }
+                return false;
             }
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
@@ -60,6 +66,20 @@ public class TimeAndDate extends TimeType{
 
     public String toString(){
         return (String.format("%02d/%02d/%d",month,day,year)+" "+super.toString());
+    }
+
+    public void increaseSecond(){
+        super.Increase();
+        if (super.getHour() == 0 && super.getMinute()==0 && super.getSecond()==0){
+            increaseDay();
+        }
+    }
+
+    public void decreaseSecond(){
+        super.Decrease();
+        if (super.getHour() == 23 && super.getMinute()==59 && super.getSecond()==59){
+            decreaseDay();
+        }
     }
 
 }
