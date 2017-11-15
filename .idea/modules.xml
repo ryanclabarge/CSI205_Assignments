@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Algorithms/Algorithms.iml" filepath="$PROJECT_DIR$/Algorithms/Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSI205_Assignments.iml" filepath="$PROJECT_DIR$/CSI205_Assignments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUI/GUI.iml" filepath="$PROJECT_DIR$/GUI/GUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mortgage/Mortgage.iml" filepath="$PROJECT_DIR$/Mortgage/Mortgage.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimeType/TimeType.iml" filepath="$PROJECT_DIR$/TimeType/TimeType.iml" />
     </modules>
