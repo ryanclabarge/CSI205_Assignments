@@ -18,7 +18,7 @@ public class TestGUI extends JFrame {
     mycontainer.add(text1);
     mycontainer.add(label2);
     mycontainer.add(text2);
-    setSize(300,100);
+    setSize(300,150);
     setVisible(true);
     }
 
